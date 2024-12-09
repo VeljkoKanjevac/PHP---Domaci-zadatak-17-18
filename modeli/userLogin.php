@@ -14,28 +14,26 @@
     session_start();
     }
 
-    if(userExists($email, $baza) === true)
-    {
-        if(dataValidation($email, $lozinka, $baza)===true)
-        {
-            $korisnik = getUserByEmail($email, $baza);
-
-            $_SESSION["ulogovan"] = true;
-            $_SESSION["id"] = $korisnik["id_korisnika"];
-            $_SESSION["email"] = $korisnik["email"];
-            $_SESSION["ime"] = $korisnik["ime"];
-            $_SESSION["prezime"] = $korisnik["prezime"];
-
-            header("Location: ../index.php");
-        }
-        else
-        {
-            $_SESSION["pogresnaLozinka"] = true;
-            header("Location: ../login.php");
-        }
-    }
-    else
+    if(userExists($email, $baza) === false)
     {   
         $_SESSION["nepostojeciEmail"] = true;
         header("Location: ../login.php");
+        exit();
     }
+  
+    if(dataValidation($email, $lozinka, $baza)===false)
+    {
+        $_SESSION["pogresnaLozinka"] = true;
+        header("Location: ../login.php");
+        exit();
+    }
+        
+    $korisnik = getUserByEmail($email, $baza);
+
+    $_SESSION["ulogovan"] = true;
+    $_SESSION["id"] = $korisnik["id_korisnika"];
+    $_SESSION["email"] = $korisnik["email"];
+    $_SESSION["ime"] = $korisnik["ime"];
+    $_SESSION["prezime"] = $korisnik["prezime"];
+
+    header("Location: ../index.php");

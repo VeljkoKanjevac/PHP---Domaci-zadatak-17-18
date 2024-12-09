@@ -16,14 +16,13 @@
     $id_proizvoda = $_POST["id_proizvoda"];
     $id_korisnika = $_SESSION["id"];
 
-    if(productExists($id_proizvoda, $baza))
+    if(productExists($id_proizvoda, $baza)===false)
     {
-        $proizvod = getProductById($id_proizvoda, $baza);
-        $cena = $proizvod["cena"] * $kolicina;
+        die("Proizvod ne postoji u bazi podataka");
+    }
 
-        makeOrder($id_proizvoda, $id_korisnika, $cena, $kolicina, $baza );
-    }
-    else
-    {
-        die ("Proizvod ne postoji u bazi podataka");
-    }
+    $proizvod = getProductById($id_proizvoda, $baza);
+    $cena = $proizvod["cena"] * $kolicina;
+
+    makeOrder($id_proizvoda, $id_korisnika, $cena, $kolicina, $baza );
+   
