@@ -1,11 +1,13 @@
 <?php
 
-    require_once "baza.php";
-    require_once "../functions/product.php";
     require_once "../functions/inputs.php";
 
+    
     checkInputs($_POST);
 
+    require_once "baza.php";
+    require_once "../functions/product.php";
+   
     $ime = $_POST["ime"];
     $opis = $_POST["opis"];
     $cena = $_POST["cena"];

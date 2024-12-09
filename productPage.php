@@ -1,9 +1,7 @@
 <?php
+    require_once "functions/inputs.php";
 
-    if(!isset($_GET["id"]) || empty($_GET["id"]))
-    {
-        die("ID proizvoda nije prosledjen");
-    }
+    checkInputs($_GET);
 
     require_once "modeli/baza.php";
 

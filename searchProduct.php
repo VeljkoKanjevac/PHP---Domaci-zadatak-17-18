@@ -13,10 +13,9 @@
     {
         die("Ne postoje proizvodi koji se poklapaju sa pretragom.");
     }
-    else
-    {
-        $proizvodi =  $rezultat -> fetch_all(MYSQLI_ASSOC);
-    }
+    
+    $proizvodi =  $rezultat -> fetch_all(MYSQLI_ASSOC);
+    
 
 ?>
 

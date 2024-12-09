@@ -1,11 +1,12 @@
 <?php
 
-    require_once "baza.php";
-    require_once "../functions/order.php";
-    require_once "../functions/product.php";
     require_once "../functions/inputs.php";
 
     checkInputs($_POST);
+
+    require_once "baza.php";
+    require_once "../functions/order.php";
+    require_once "../functions/product.php";
 
     if(session_status() == PHP_SESSION_NONE)
     {

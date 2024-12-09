@@ -8,10 +8,10 @@
     $id_korisnika = $_SESSION["id"];
 
     require_once "modeli/baza.php";
+    require_once "functions/order.php";
 
-    $rezultat = $baza -> query(" SELECT * FROM narudzbine WHERE id_korisnika = $id_korisnika ");
-    $brojNarudzbina = $rezultat -> num_rows;
-    $narudzbine = $rezultat -> fetch_all(MYSQLI_ASSOC);
+    $narudzbine = getOrdersById($id_korisnika, $baza);
+    $brojNarudzbina = sizeof($narudzbine);
 ?>
 
 <!DOCTYPE html>

@@ -11,4 +11,13 @@
                         VALUES ($productId, $user_id, $price, $amount) ");
     }
 
-   
+   function getOrdersById( $userId, $sql)
+   {
+        $user_id = $sql -> real_escape_string($userId);
+        
+        $rezultat = $sql -> query(" SELECT * FROM narudzbine WHERE id_korisnika = $user_id ");
+    
+        $orders = $rezultat -> fetch_all(MYSQLI_ASSOC);
+
+        return $orders;
+    }

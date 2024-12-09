@@ -1,10 +1,11 @@
 <?php
 
-    require_once "baza.php";
-    require_once "../functions/user.php";
     require_once "../functions/inputs.php";
 
     checkInputs($_POST);
+
+    require_once "baza.php";
+    require_once "../functions/user.php";
 
     $email = $_POST["email"];
     $lozinka = $_POST["lozinka"];

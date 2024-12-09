@@ -1,10 +1,10 @@
 <?php
 
     require_once "modeli/baza.php";
+    require_once "functions/product.php";
 
-    $rezultat = $baza -> query(" SELECT * FROM proizvodi ");
-    $brojProizvoda = $rezultat -> num_rows;
-    $proizvodi = $rezultat -> fetch_all(MYSQLI_ASSOC);
+    $proizvodi = getAllProducts($baza);
+    $brojProizvoda = sizeof($proizvodi);
 
 ?>
 
