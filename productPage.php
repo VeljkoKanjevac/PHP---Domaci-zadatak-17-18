@@ -68,7 +68,9 @@
 
     <?php else: ?>
 
-        <a class="btn btn-primary" href="login.php">Ulogujte se da biste porucili</a>
+        <div class="d-flex justify-content-center mt-3">
+            <a class="btn btn-primary" href="login.php">Ulogujte se da biste porucili</a>
+        </div>
 
     <?php endif; ?>
      
