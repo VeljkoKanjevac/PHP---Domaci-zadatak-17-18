@@ -50,11 +50,9 @@
     function getAllProducts($sql): array
     {
         $result = $sql -> query(" SELECT * FROM proizvodi ");
-        if ($result -> num_rows == 0)
-        {
-            die("Nema proizvoda u bazi podataka");
-        }
+
         $products = $result -> fetch_all(MYSQLI_ASSOC);
+        
         return $products;
     }
 
