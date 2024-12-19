@@ -61,6 +61,8 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="modeli/logout.php">Log out</a></li>
                           <li><a class="dropdown-item" href="userProfile.php">Profil</a></li>
+                          <li><a class="dropdown-item" href="changeAccount.php">Izmeni nalog</a></li>
+                          <li><a class="dropdown-item" href="deleteAccount.php">Obrisi nalog</a></li>
                         </ul>
                     </li>
                 </ul>

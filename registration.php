@@ -20,7 +20,15 @@
 
 <body>
 
-<?php require_once "index.php"; ?>
+    <?php require_once "index.php"; ?>
+
+    <?php if(isset($_SESSION["postojeciEmail"])): ?>
+        <div class="alert alert-danger" role="alert">
+            <div class="container">
+                Email vec postoji u bazi podataka! Pokusajte ponono.
+            </div>
+        </div>
+    <?php endif; ?>
 
     <div class="container">
         <form action="modeli/userRegistration.php" method="post">

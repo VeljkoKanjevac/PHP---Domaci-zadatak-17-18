@@ -1,5 +1,10 @@
 <?php
 
+    if(session_status()==PHP_SESSION_NONE)
+    {
+        session_start();
+    }
+
     require_once "../functions/inputs.php";
 
     checkInputs($_POST);
@@ -13,9 +18,10 @@
     $lozinka = $_POST["lozinka"];
     $lozinkaPonovljeno = $_POST["lozinkaPonovljeno"];
 
-    if(userExists($email, $baza))
+    if(userExists($email, $baza)===true)
     {
-        die("Vec postoji nalog sa email adresom koju ste uneli");
+        $_SESSION["postojeciEmail"];
+        header("Location:../registration.php");
     }
 
     registerUser($ime,$prezime,$email,$lozinka,$lozinkaPonovljeno,$baza);

@@ -29,7 +29,7 @@
         <div class="container col-10 mt-2 d-flex justify-content-evenly flex-wrap">
             <?php foreach($proizvodi as $proizvod): ?>
 
-                <div class="card align-items-center" style="width:16rem;">
+                <div class="card align-items-center mb-3" style="width:16rem;">
                     <img style="height:50%" src="images/mobile-shop-logo.png" class="card-img-top" alt="mobile shop logo">
                     <div class="card-body">
                         <h5 class="card-title"> <?= $proizvod["ime"] ?> </h5>
